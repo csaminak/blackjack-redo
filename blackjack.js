@@ -1,4 +1,4 @@
-function runGame() {
+(function runGame() {
 
     var display = document.getElementById('cards');
     var cards = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
@@ -76,4 +76,4 @@ function runGame() {
     display.innerHTML = cards[getNewCard()];
     display.innerHTML = display.innerHTML + ' ' + cards[getNewCard()];
 
-}
+})();
