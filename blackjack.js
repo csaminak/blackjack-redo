@@ -10,7 +10,7 @@
      * @return {String}  a card from the cards array.
      */
     function getNewCard() {
-        return cards[Math.round(Math.random() * cards.length)];
+        return cards[Math.floor(Math.random() * cards.length)];
     }
 
 
