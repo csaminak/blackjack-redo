@@ -37,18 +37,28 @@
             }
         });
 
-        if (cardValue < 15 && standing) {
-            alert('Dealer wins.');
+        var loseValue = cardValue < 16;
+        var tieValue = cardValue >= 16 && cardValue <= 18;
+        var winValue = cardValue >= 19 && cardValue <= 21;
+
+        if (standing) {
+            if (loseValue) {
+                alert('Dealer wins.');
+            } else if (tieValue) {
+                alert('Push!');
+            } else if (winValue || cardValue === 21) {
+                alert('You win!');
+            }
         }
-        if (cardValue < 18 && standing) {
-            alert('Push!');
+
+        if (hitting) {
+            if (winValue || cardValue === 21) {
+                alert('You win!');
+            } else if (cardValue > 21) {
+                alert('You Bust.');
+            }
         }
-        if (cardValue > 18 && hitting || cardValue === 21) {
-            alert('You win!');
-        }
-        if (cardValue > 21) {
-            alert('You Bust.');
-        }
+
 
     display.innerHTML = '';
     display.innerHTML = cards[getNewCard()];
