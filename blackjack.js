@@ -1,12 +1,12 @@
 function runGame() {
 
     var display = document.getElementById('cards');
-    cards = ['A', '2','3', '4','5',"6",'7','7','8', '9', "10", 'J', 'Q', 'K']
+    var cards = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
 
     function hit() {
         var card = Math.round(Math.random() * cards.length);
         display.innerHTML = cards[card];
-        checkResult('no', true);
+        checkResult(false, true);
     }
 
     /**
@@ -21,15 +21,16 @@ function runGame() {
 
         var cardValue = 0;
 
-        cards.forEach(function (card, i) {
+        cards.forEach(function (card) {
             if (Number(card)) {
-                cardValue = cardValue + card;
+                cardValue += card;
             }
-
-            if (card === 'J' || card == 'Q' || card === 'J')
-                cardValue = cardValue + 10;
-
-            if (cards[i] = 'A') { cardValue = cardValue += 11; }
+            if (card === 'J' || card === 'Q' || card === 'K') {
+                cardValue += 10;
+            }
+            if (card === 'A') {
+                cardValue += 11;
+            }
         });
 
         if (cardValue < 15 && standing) {
@@ -38,7 +39,7 @@ function runGame() {
         if (cardValue < 18 && standing) {
             alert('Push!');
         }
-        if (cardValue > 18 & hitting || cardValue === 21) {
+        if (cardValue > 18 && hitting || cardValue === 21) {
             alert('You win!');
         }
         if (cardValue > 21) {
@@ -46,18 +47,21 @@ function runGame() {
         }
 
     display.innerHTML = '';
-    card = Math.round(Math.random() * cards.length);
+    card = Math.round(Math.random() * cards.length); //Need to create function for card
     display.innerHTML = cards[card];
     }
 
     document.getElementById('stand').addEventListener('click', function() {
-        checkREsult(true);
+        checkResult(true, false);
     });
 
-    document.getElementById('hit').addEventListener('click',function(){checkResult(null, true);});
+    document.getElementById('hit').addEventListener('click',function() {
+        checkResult(false, true);
+    });
 
     card = Math.round(Math.random() * cards.length);
     display.innerHTML = cards[card];
     card = Math.round(Math.random() * cards.length);
     display.innerHTML = display.innerHTML + ' ' + cards[card];
+
 }
