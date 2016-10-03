@@ -7,7 +7,7 @@
      *  Takes a number from 0 to the length of the cards array as the index
      *  value and then returns a card from that position in the array.
      *
-     * @return {String}  card from the cards array.
+     * @return {String}  a card from the cards array.
      */
     function getNewCard() {
         return cards[Math.round(Math.random() * cards.length)];
