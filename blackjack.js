@@ -21,11 +21,11 @@
      * @return {void}
      */
     function checkResult(standing, hitting) {
-        cards = display.innerHTML.split(' ');
+        var displayCards = display.innerHTML.split(' ');
 
         var cardValue = 0;
 
-        cards.forEach(function (card) {
+        displayCards.forEach(function (card) {
             if (card === 'J' || card === 'Q' || card === 'K') {
                 card = 10;
             } else if (card === 'A') {
