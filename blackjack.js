@@ -14,18 +14,6 @@ function runGame() {
 
 
     /**
-     * Produces a new card when called and will display that card and then
-     * checks to see what the status of the user is at this point.
-     *
-     * @return {void}
-     */
-    function hit() {
-        display.innerHTML = cards[getNewCard()];
-        checkResult(false, true);
-    }
-
-
-    /**
      * Check the result of the current cards and alert the game result
      *
      * @param  {Boolean} standing  Whether or not the player is standing
@@ -66,10 +54,21 @@ function runGame() {
     display.innerHTML = cards[getNewCard()];
     }
 
+    /**
+     * Produces a new card when called and will display that card and then
+     * checks to see what the status of the user is at this point.
+     *
+     * @return {void}
+     */
+    function hit() {
+        display.innerHTML = cards[getNewCard()];
+        checkResult(false, true);
+    }
+
+
     document.getElementById('stand').addEventListener('click', function() {
         checkResult(true, false);
     });
-
     document.getElementById('hit').addEventListener('click', function() {
         hit();
     });
