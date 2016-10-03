@@ -26,15 +26,14 @@
         var cardValue = 0;
 
         cards.forEach(function (card) {
-            if (Number(card)) {
-                cardValue += card;
-            }
             if (card === 'J' || card === 'Q' || card === 'K') {
-                cardValue += 10;
+                card = 10;
+            } else if (card === 'A') {
+                card = 11;
+            } else {
+                card = Number(card);
             }
-            if (card === 'A') {
-                cardValue += 11;
-            }
+            cardValue += card;
         });
 
         var loseValue = cardValue < 16;
