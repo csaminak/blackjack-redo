@@ -46,19 +46,22 @@
                 alert('Dealer wins.');
             } else if (tieValue) {
                 alert('Push!');
-            } else if (winValue || cardValue === 21) {
+            } else if (winValue) {
                 alert('You win!');
             }
         }
 
         if (hitting) {
-            if (winValue || cardValue === 21) {
+            if (winValue) {
                 alert('You win!');
             } else if (cardValue > 21) {
                 alert('You Bust.');
             }
         }
 
+        if (cardValue === 21) {
+            alert('You win!');
+        }
 
     display.innerHTML = '';
     display.innerHTML = cards[getNewCard()];
