@@ -4,16 +4,26 @@ function runGame() {
     var cards = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
 
     /**
+     *  Returns a random value that can be from 0 to the length of the cards array.
+     *
+     * @return {Number}  a random number up to the length of the array.
+     */
+    function getNewCard() {
+        return Math.round(Math.random() * cards.length);
+    }
+
+
+    /**
      * Produces a new card when called and will display that card and then
      * checks to see what the status of the user is at this point.
      *
      * @return {void}
      */
     function hit() {
-        var card = Math.round(Math.random() * cards.length);
-        display.innerHTML = cards[card];
+        display.innerHTML = cards[getNewCard()];
         checkResult(false, true);
     }
+
 
     /**
      * Check the result of the current cards and alert the game result
@@ -53,8 +63,7 @@ function runGame() {
         }
 
     display.innerHTML = '';
-    card = Math.round(Math.random() * cards.length); //Need to create function for card
-    display.innerHTML = cards[card];
+    display.innerHTML = cards[getNewCard()];
     }
 
     document.getElementById('stand').addEventListener('click', function() {
@@ -65,9 +74,7 @@ function runGame() {
         hit();
     });
 
-    card = Math.round(Math.random() * cards.length);
-    display.innerHTML = cards[card];
-    card = Math.round(Math.random() * cards.length);
-    display.innerHTML = display.innerHTML + ' ' + cards[card];
+    display.innerHTML = cards[getNewCard()];
+    display.innerHTML = display.innerHTML + ' ' + cards[getNewCard()];
 
 }
