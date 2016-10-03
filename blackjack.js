@@ -4,12 +4,13 @@
     var cards = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
 
     /**
-     *  Returns a random value that can be from 0 to the length of the cards array.
+     *  Takes a number from 0 to the length of the cards array as the index
+     *  value and then returns a card from that position in the array.
      *
-     * @return {Number}  a random number up to the length of the array.
+     * @return {String}  card from the cards array.
      */
     function getNewCard() {
-        return Math.round(Math.random() * cards.length);
+        return cards[Math.round(Math.random() * cards.length)];
     }
 
 
@@ -63,7 +64,7 @@
         }
 
     display.innerHTML = '';
-    display.innerHTML = cards[getNewCard()];
+    display.innerHTML = getNewCard();
     }
 
     /**
@@ -85,7 +86,7 @@
         hit();
     });
 
-    display.innerHTML = cards[getNewCard()];
-    display.innerHTML = display.innerHTML + ' ' + cards[getNewCard()];
+    display.innerHTML = getNewCard();
+    display.innerHTML = display.innerHTML + ' ' + getNewCard();
 
 })();
