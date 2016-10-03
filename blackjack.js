@@ -79,10 +79,15 @@
         hit();
     });
 
-
+    /**
+     * Resets the cards provided and then checks the results immediately.
+     *
+     * @return {void}
+     */
     function resetCards() {
         display.innerHTML = getNewCard();
         display.innerHTML = display.innerHTML + ' ' + getNewCard();
+        checkResult(false, false);
     }
 
     resetCards();
