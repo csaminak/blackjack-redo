@@ -17,8 +17,8 @@
     /**
      * Check the result of the current cards and alert the game result
      *
-     * @param  {Boolean} standing  Whether or not the player is standing
-     * @param  {Boolean} hitting   Whether or not the player is hitting
+     * @param  {Boolean}  standing  Whether or not the player is standing
+     * @param  {Boolean}  hitting   Whether or not the player is hitting
      * @return {void}
      */
     function checkResult(standing, hitting) {
@@ -63,8 +63,7 @@
             alert('You win!');
         }
 
-    display.innerHTML = '';
-    display.innerHTML = getNewCard();
+    resetCards();
     }
 
     /**
@@ -74,7 +73,7 @@
      * @return {void}
      */
     function hit() {
-        display.innerHTML = cards[getNewCard()];
+        display.innerHTML = display.innerHTML + ' ' + getNewCard();
         checkResult(false, true);
     }
 
@@ -86,7 +85,12 @@
         hit();
     });
 
-    display.innerHTML = getNewCard();
-    display.innerHTML = display.innerHTML + ' ' + getNewCard();
+
+    function resetCards() {
+        display.innerHTML = getNewCard();
+        display.innerHTML = display.innerHTML + ' ' + getNewCard();
+    }
+
+    resetCards();
 
 })();
