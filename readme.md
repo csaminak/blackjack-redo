@@ -1,6 +1,6 @@
 # Blackjack
 
-Redoing a [previous homework assignment](https://github.com/csaminak/fee-blackjack) to take an incomplete game of blackjack with various bugs and fix it up to create a functional game of blackjack.
+Redoing a previous [homework assignment repository](https://github.com/csaminak/fee-blackjack) to take an incomplete game of blackjack with various bugs and fix it up to create a functional game of blackjack.
 
 
 ### Win/Loss conditions if the total is:
@@ -10,4 +10,7 @@ Redoing a [previous homework assignment](https://github.com/csaminak/fee-blackja
 - under 16 they lose
 
 
-All cards have their face value except 'J', 'Q', 'K' which has a value of 10 and 'A' which has a value of 11.
+All cards have their face card value, except 'J', 'Q', 'K' which has a value of 10 and 'A' which has a value of 11.
+
+
+Assignment instructions can be found [here](rules.md).
