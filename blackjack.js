@@ -49,8 +49,10 @@
         if (hitting) {
             if (cardValue >= 19 && cardValue <= 21) {
                 alert('You win!');
+                resetCards();
             } else if (cardValue > 21) {
                 alert('You Bust.');
+                resetCards();
             }
         }
 
@@ -62,10 +64,13 @@
 
     document.getElementById('stand').addEventListener('click', function() {
         checkResult(true, false);
+        resetCards();
     });
     document.getElementById('hit').addEventListener('click', function() {
         display.innerHTML += ' ' + getNewCard();
-        checkResult(false, true);
+        setTimeout(function() {
+            checkResult(false, true);
+        }, 500);
     });
 
     /**
