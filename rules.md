@@ -1,7 +1,5 @@
 # Assignment Rules
 
-Your Mission
-
 Take the beginnings of a simple game of Blackjack and fix every issue in the JavaScript file you can find to get the game working. This code does not currently work, so fixing basic syntax errors might be your first task, but there are numerous other issues.
 
 #### The game, once completed, works like so:
