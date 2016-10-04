@@ -23,7 +23,6 @@
      */
     function checkResult(standing, hitting) {
         var displayCards = display.innerHTML.split(' ');
-
         var cardValue = 0;
 
         displayCards.forEach(function (card) {
@@ -60,23 +59,13 @@
         }
     }
 
-    /**
-     * Produces a new card when called and will display that card and then
-     * checks to see what the status of the user is at this point.
-     *
-     * @return {void}
-     */
-    function hit() {
-        display.innerHTML = display.innerHTML + ' ' + getNewCard();
-        checkResult(false, true);
-    }
-
 
     document.getElementById('stand').addEventListener('click', function() {
         checkResult(true, false);
     });
     document.getElementById('hit').addEventListener('click', function() {
-        hit();
+        display.innerHTML += ' ' + getNewCard();
+        checkResult(false, true);
     });
 
     /**
@@ -85,8 +74,7 @@
      * @return {void}
      */
     function resetCards() {
-        display.innerHTML = getNewCard();
-        display.innerHTML = display.innerHTML + ' ' + getNewCard();
+        display.innerHTML = getNewCard() + ' ' + getNewCard();
         checkResult(false, false);
     }
 
