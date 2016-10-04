@@ -1,6 +1,6 @@
 # Blackjack
 
-Redoing a homework assignment to take an incomplete game of blackjack with various bugs and fix it up to create a functional game of blackjack.
+Redoing a [previous homework assignment](https://github.com/csaminak/fee-blackjack) to take an incomplete game of blackjack with various bugs and fix it up to create a functional game of blackjack.
 
 
 ### Win/Loss conditions if the total is:
